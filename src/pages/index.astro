@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Card1 from "../components/Card1.astro";
 import { Client, networks } from "hello_world";
+
 //import { rpcUrl } from "../contracts/util";
 
 const contract = new Client({
@@ -45,30 +47,39 @@ const greeting = result.join(" ");
 			</defs>
 		</svg>
 		<h1>{greeting}</h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		<p style="text-align: center" class="instructions">
+			Welcome To UseMovenet Games
+			<!--To get started, open the directory <code>src/pages</code> in your project.<br />
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.-->
 		</p>
 		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
+			<Card1
+				href="/boxing.html"
 				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				body=""
+				imgSrc="/img/image1.jpg"
+				imgAlt="Boxing Documentation"
 			/>
-			<Card
+			<Card1
 				href="https://astro.build/integrations/"
 				title="Integrations"
 				body="Supercharge your project with new frameworks and libraries."
+				imgSrc="/img/tensorflow.gif"
+				imgAlt="Boxing Documentation"
 			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+			<Card1
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+				imgSrc="/img/dino.gif"
+				imgAlt="Boxing Documentation"
 			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+			<Card1
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+				imgSrc="/img/star.gif"
+				imgAlt="Boxing Documentation"
 			/>
 		</ul>
 	</main>
