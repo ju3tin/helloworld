@@ -13,6 +13,7 @@
   "name": "soroban-hello-world",
   "scripts": {
     "astro": "astro",
+    "dude": "cd packages/hello_world && npm i && npm run build",
     "build": "astro check && astro build",
     "dev": "npm run init && astro dev",
     "init": "node initialize.js",
