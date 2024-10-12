@@ -34,7 +34,6 @@ pnpm-debug.log*
 .DS_Store
 
 # generated contract clients
-packages/*
 # if you have other workspace packages, add them here
 !packages/.gitkeep
 
