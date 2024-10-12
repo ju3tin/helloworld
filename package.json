@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@creit.tech/stellar-wallets-kit": "^1.2.3",
+    "astro": "^4.2.4",
+    "hello_world": "file:./packages/hello_world",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.1",
+    "glob": "^10.4.1"
+  },
+  "name": "soroban-hello-world",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro check && astro build",
+    "dev": "npm run init && astro dev",
+    "init": "node initialize.js",
+    "preview": "astro preview",
+    "start": "npm run init && astro dev"
+  },
+  "type": "module",
+  "version": "0.0.1",
+  "workspaces": [
+    "packages/*"
+  ]
+}
