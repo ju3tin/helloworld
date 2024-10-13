@@ -6,11 +6,6 @@ import PasskeyWallet from '@yuesth/passkey-wallet-stellar'
 
 //import { rpcUrl } from "../contracts/util";
 
-const onClickButton = async () => {
-//the private key must be provided in order to create new wallet on stellar ledger
-const instance = new PasskeyWallet('testnet', 'sdf', 'sdf', 5)
-await wallet.createFromExistingPasskey()
-}
 
 const contract = new Client({
 	rpcUrl: 'https://soroban-testnet.stellar.org',
@@ -23,6 +18,16 @@ const greeting = result.join(" ");
 ---
 
 <script is:inline>var global = global || window;</script>
+<script>
+	const onClickButton = async () => {
+//the private key must be provided in order to create new wallet on stellar ledger
+const instance = new PasskeyWallet('testnet', 'sdf', 'sdf', 5)
+await wallet.createFromExistingPasskey()
+}
+return(
+  <button onClick={onClickButton}>Get a key</button>
+)
+</script>
 <Layout title={greeting}>
 	<main>
 		<svg
@@ -53,8 +58,7 @@ const greeting = result.join(" ");
 				</linearGradient>
 			</defs>
 		</svg>
-		<button onclick="onClickButton()">Create a key</button>
-		
+	
 		<h1>{greeting}</h1>
 		<p style="text-align: center" class="instructions">
 			Welcome To UseMovenet Games
