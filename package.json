@@ -3,8 +3,6 @@
     "@astrojs/check": "^0.4.1",
     "@astrojs/react": "^3.6.2",
     "@creit.tech/stellar-wallets-kit": "^1.2.3",
-    "@tensorflow-models/posenet": "^2.2.2",
-    "@tensorflow/tfjs": "^4.21.0",
     "@yuesth/passkey-wallet-stellar": "^10.1.2",
     "astro": "^4.16.2",
     "astro-og-canvas": "^0.5.4",
