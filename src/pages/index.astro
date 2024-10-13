@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card1 from "../components/Card1.astro";
 import { Client, networks } from "hello_world";
-import PasskeyWallet from 'passkey-kit';
+//import PasskeyWallet from 'passkey-kit';
 
 //import { rpcUrl } from "../contracts/util";
 
@@ -19,6 +19,7 @@ const greeting = result.join(" ");
 
 <script is:inline>var global = global || window;</script>
 <script>
+	/*
 	const onClickButton = async () => {
 //the private key must be provided in order to create new wallet on stellar ledger
 const instance = new PasskeyWallet('testnet', 'sdf', 'sdf', 5)
@@ -26,7 +27,7 @@ await wallet.createFromExistingPasskey()
 }
 return(
   <button onClick={onClickButton}>Get a key</button>
-)
+)*/
 </script>
 <Layout title={greeting}>
 	<main>
