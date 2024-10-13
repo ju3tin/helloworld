@@ -3,6 +3,7 @@ let poseNet;
 let pose;
 let skeleton;
 let timer = 60;
+const audio = new Audio('/assets/rocky.mp3');
 
 let bubbles = [];
 let items = ['red','blue','green','yellow'];
@@ -116,6 +117,7 @@ function draw() {
 
     
     if (pose) {
+      
       let d = 50;
       fill(0);
       ellipse(pose.nose.x-d,pose.nose.y-d,80,80); // left ear
@@ -150,7 +152,7 @@ function draw() {
 
   }
   else if (screen == 1) {
-
+    
     background(256);
     fill('red');
     strokeWeight(1);
@@ -316,7 +318,7 @@ function draw() {
     }
   } 
   else if (screen == 2) {
-		
+	
 		background(255)
     fill(0)
     textAlign(CENTER);
@@ -329,6 +331,11 @@ function draw() {
 		text('click to play again', width / 2, height - 60);
     
     //score = 0;
+
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0; // Reset audio to the beginning
+  }
 	}
 }
 
@@ -467,6 +474,7 @@ class Bubble {
 function mousePressed() {
 	if (screen == 0) {
     if (pose) {
+    audio.play();
       screen = 1;
       score = 0;
       combo_L = 200;
@@ -474,6 +482,7 @@ function mousePressed() {
       punch_count = 0;
     }
 	}else	if (screen == 1) {
+   
 
 	} else if (screen == 2) {
     timer = 60;
