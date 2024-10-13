@@ -2,8 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Card1 from "../components/Card1.astro";
 import { Client, networks } from "hello_world";
+import PasskeyWallet from '@yuesth/passkey-wallet-stellar'
 
 //import { rpcUrl } from "../contracts/util";
+
+const onClickButton = async () => {
+//the private key must be provided in order to create new wallet on stellar ledger
+const instance = new PasskeyWallet('testnet', 'sdf', 'sdf', 5)
+await wallet.createFromExistingPasskey()
+}
 
 const contract = new Client({
 	rpcUrl: 'https://soroban-testnet.stellar.org',
@@ -47,6 +54,7 @@ const greeting = result.join(" ");
 			</defs>
 		</svg>
 		<button onclick="onClickButton()">Create a key</button>
+		
 		<h1>{greeting}</h1>
 		<p style="text-align: center" class="instructions">
 			Welcome To UseMovenet Games
