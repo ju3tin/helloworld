@@ -2,7 +2,10 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@creit.tech/stellar-wallets-kit": "^1.2.3",
+    "@tensorflow/tfjs": "^4.21.0",
+    "@yuesth/passkey-wallet-stellar": "^10.1.2",
     "astro": "^4.16.2",
+    "astro-og-canvas": "^0.5.4",
     "hello_world": "file:./packages/hello_world",
     "typescript": "^5.3.3"
   },

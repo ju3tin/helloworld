@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout2.astro";
+import * as tf from '@tensorflow/tfjs';
+
+if (!tf) {
+  console.error('TensorFlow.js failed to load');
+} else {
+  // Proceed with using tf.loadGraphModel
+  tf.loadGraphModel('/path/to/model/model.json')
+    .then(model => {
+      console.log('Model loaded successfully', model);
+    })
+    .catch(error => {
+      console.error('Error loading the model:', error);
+    });
+}
+---
+<Layout>
+
+</Layout>
+
+

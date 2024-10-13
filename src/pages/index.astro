@@ -2,16 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import Card1 from "../components/Card1.astro";
 import { Client, networks } from "hello_world";
-
+import PasskeyWallet from '@yuesth/passkey-wallet-stellar';
 //import { rpcUrl } from "../contracts/util";
 
 const contract = new Client({
 	rpcUrl: 'https://soroban-testnet.stellar.org',
 	...networks.testnet
 })
-
+const onClickButton = async () => {
+//the private key must be provided in order to create new wallet on stellar ledger
+const instance = new PasskeyWallet('testnet', 'sdfsdfsfs', 'dfg', 5)
+await wallet.createFromCreatingPasskey()
+};
 const { result } = await contract.hello({ to: "you" });
 const greeting = result.join(" ");
+
 ---
 
 <script is:inline>var global = global || window;</script>
@@ -45,6 +50,7 @@ const greeting = result.join(" ");
 				</linearGradient>
 			</defs>
 		</svg>
+		<button onclick="onClickButton()">Create a key</button>
 		<h1>{greeting}</h1>
 		<p style="text-align: center" class="instructions">
 			Welcome To UseMovenet Games
@@ -67,7 +73,7 @@ const greeting = result.join(" ");
 				imgAlt="Boxing Documentation"
 			/>
 			<Card1
-				href="https://astro.build/integrations/"
+				href="/dino.html"
 				title="Integrations"
 				body="Supercharge your project with new frameworks and libraries."
 				imgSrc="/img/dino.gif"
