@@ -2,18 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Card1 from "../components/Card1.astro";
 import { Client, networks } from "hello_world";
-import PasskeyWallet from '@yuesth/passkey-wallet-stellar';
+
 //import { rpcUrl } from "../contracts/util";
 
 const contract = new Client({
 	rpcUrl: 'https://soroban-testnet.stellar.org',
 	...networks.testnet
 })
-const onClickButton = async () => {
-//the private key must be provided in order to create new wallet on stellar ledger
-const instance = new PasskeyWallet('testnet', 'sdfsdfsfs', 'dfg', 5)
-await wallet.createFromCreatingPasskey()
-};
+
 const { result } = await contract.hello({ to: "you" });
 const greeting = result.join(" ");
 
